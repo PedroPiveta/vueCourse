@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello, Vue :)</h1>
@@ -25,6 +35,15 @@
         <button v-on:click="age++">Increase age</button>
         <button v-on:click="age--">Decrease age</button>
         <div @click="changeTitle('Oathbringer')">Change Book title</div>
+    
+        <br>
+
+        <!-- Mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouse leave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMouseMove">position - {{ x }} {{ y }}</div>
+
     </div>
 
     <script src="app.js"></script>
